@@ -8,6 +8,13 @@
     <title>DataScience</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style>
+
+            .card{
+                margin: auto;
+                height: 500px;
+            }
+        </style>
 </head>
 
 <body>
@@ -17,14 +24,65 @@
         <form method="POST" action="" class="shadow-lg p-3 mb-5 bg-white rounded">
             {% csrf_token %}
             <div class="form-group">
-                <h2>test text</h2>
+                <h2 style="text-align: center;">DATASCIENCE PROJECT</h2>
                 <textarea class="form-control" rows="3" name="chat" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary mb-2">test</button>
-            <h1>{{ label }}</h1>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+        <h1 style="text-align: center;">Classification : {{ label }}</h1>
+        <p class="card-text" style="text-align: center;"><small class="text-muted">Accuracy : {{ acc }} %</small></p>
         </form>
-    </div>
+        <div class="row">
+        <div class="card text-white bg-dark " style="max-width: 18rem;">
+            <div class="card-header">ตัวอย่างบทสนทนา</div>
+            <div class="card-body">
+                <h5 class="card-title">sci.med</h5>
+                <p class="card-text">
 
+                    MSG is mono sodium glutamate, a fairly straight forward compound. If it is
+                    pure, the source should not be a problem. Your comment suggests that 
+                    impurities may be the cause.
+                    My experience of MSG effects (as part of a double blind study) was that the
+                    pure stuff caused me some rather severe effects.
+                    
+                    
+                    Soya bean, fermented cheeses, mushrooms all contain MSG.</p>
+            </div>
+        </div>
+
+        <div class="card text-white bg-dark" style="max-width: 18rem;">
+            <div class="card-header">ตัวอย่างบทสนทนา</div>
+            <div class="card-body">
+                <h5 class="card-title">sci.space</h5>
+                <p class="card-text">Their Hiten engineering-test mission spent a while in a highly eccentric
+                    Earth orbit doing lunar 
+                    flybys, and then was inserted into lunar orbit
+                    using some very tricky gravity-assist-like maneuvering.  This meant that
+                    it would crash on the Moon eventually, since there is no such thing as
+                    a stable lunar orbit (as far as anyone knows), and I believe I recall
+                    hearing recently that it was about to happen.</p>
+            </div>
+        </div>
+        
+        <div class="card text-white bg-dark" style="max-width: 18rem;">
+            <div class="card-header">ตัวอย่างบทสนทนา</div>
+            <div class="card-body">
+                <h5 class="card-title">comp.graphics</h5>
+                <p class="card-text">
+                    Having thought about this, why don't you project the 2 lines onto the 2d
+                    plane formed by the lines.  Do an intersection calculation in the plane in
+                    2D, where you're guaranteed a unique solution (unless they're parallel which
+                    won't happen in this case), and then use parametric distance along the lines
+                    from the circle centres to determine the exact point of interest.  This
+                    bypasses the messy error propogation required to do the calculation in 3d.
+                    
+                    Hope I haven't put my foot in it again!
+                    
+                    steve
+                    ---</p>
+            </div>
+        </div>
+    </div>
+    </div>
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

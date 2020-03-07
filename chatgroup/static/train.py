@@ -6,7 +6,7 @@ from joblib import dump
 
 data = fetch_20newsgroups()
 
-categories = ['talk.politics.guns', 'sci.space', 'comp.graphics']
+categories = ['sci.med', 'sci.space', 'comp.graphics']
 train = fetch_20newsgroups(subset='train', categories=categories)
 test = fetch_20newsgroups(subset='test', categories=categories)
 model = make_pipeline(TfidfVectorizer(), MultinomialNB())
@@ -14,6 +14,8 @@ model.fit(train.data, train.target)
 labels = model.predict(test.data)
 test.target[0:10]
 n = len(test.data)
-corrects = [ 1 for i in range(n) if test.target[i] == labels[i] ]
-print(f'Acc : {sum(corrects)*100/n} %')
+acc = [ 1 for i in range(n) if test.target[i] == labels[i] ]
+print(f'Acc : {sum(acc)*100/n} %')
 dump(model, 'chatgroup.model')
+Acc = sum(acc)*100/n
+dump(Acc, 'acc.model')
